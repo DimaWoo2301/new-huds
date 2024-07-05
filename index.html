@@ -10,7 +10,21 @@
     <header class="header-test">header</header>
     <div id="myModal" class="modal">
       <div class="modal-content">
-        <span class="close">НАЗАД</span>
+        <div class="close">
+          <svg
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M32 14H7.66L18.84 2.82L16 0L0 16L16 32L18.82 29.18L7.66 18H32V14Z"
+              fill="#BF1B3E"
+            />
+          </svg>
+          <span>Назад</span>
+        </div>
         <div class="container">
           <div class="modal-content-info-wrapper">
             <div class="modal-content-info">
@@ -164,12 +178,14 @@
       <nav>
         <div class="container">
           <div class="hods-nav">
-            <div class="hods-nav-left">
+            <div id="hods-nav-left" class="hods-nav-left">
               <span>варочные поверхности:</span>
-              <button>Электрические</button>
-              <button>Индукционные</button>
-              <button>Газовые</button>
-              <button>Духовые шкафы</button>
+              <button class="hods-nav-left-button hods-nav-active">
+                Электрические
+              </button>
+              <button class="hods-nav-left-button">Индукционные</button>
+              <button class="hods-nav-left-button">Газовые</button>
+              <button class="hods-nav-left-button">Духовые шкафы</button>
             </div>
             <div class="hods-nav-right">
               <button>Подобрать комплект</button>
@@ -944,6 +960,24 @@
           document.body.style.overflow = "auto";
           modal.style.display = "none";
         }
+      });
+      //Активация кнопок
+      document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(
+          "#hods-nav-left .hods-nav-left-button"
+        );
+
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            // Удаляем класс 'active' у всех кнопок
+            buttons.forEach(function (btn) {
+              btn.classList.remove("hods-nav-active");
+            });
+
+            // Добавляем класс 'active' к нажатой кнопке
+            this.classList.add("hods-nav-active");
+          });
+        });
       });
     </script>
   </body>

@@ -26634,16 +26634,39 @@ main{
     line-height: 14.63px;
 }
 
-.hods-nav-left button{
+.hods-nav-left-button{
     border-radius: 33px;
-    border: 2px;
+    border: 2px solid #909090;
+    margin-left: 10px;
+    color: #909090;
+    background-color: transparent;
     padding: 10px 20px 10px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14.63px;
+    cursor: pointer;
+}
+
+.hods-nav-active {
+    border: 2px solid #BF1B3E !important;
+    color: #BF1B3E !important;
 }
 
 .hods-nav-left :last-child{
     margin-left: 40px;
 }
 
+.hods-nav-right button{
+    padding: 10px 20px;
+    background-color: #BF1B3E;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    text-transform: uppercase;
+    border-radius: 33px;
+    cursor: pointer;
+}
 
 
 .carts-wrapper :last-child{
@@ -26882,19 +26905,24 @@ main{
     object-fit: contain; 
   }
   .close {
-    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #BF1B3E;
     position: absolute;
     top: 10px;
     left: 10px;
     font-size: 28px;
     font-weight: bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px; 
   }
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  
+  .close svg{
+    margin-bottom: 6px;
   }
+
   .open-modal-btn {
     cursor: pointer;
     padding: 10px 20px;
